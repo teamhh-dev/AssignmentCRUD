@@ -12,20 +12,22 @@ namespace AssignmentCRUD.Controllers
         // GET: Contact
         public ActionResult All()
         {
-            List<Contact> contact = new List<Contact>() { new Contact(){ ID = 1, Email = "h@.com", Name = "Hamza", ActiveSince = DateTime.Now.AddDays(-5), PhoneNumber = "03124546453" }  };
+            //List<Contact> contact = new List<Contact>() { new Contact(){ ID = 1, Email = "h@.com", Name = "Hamza", ActiveSince = DateTime.Now.AddDays(-5), PhoneNumber = "03124546453" }  };
 
-            return View(contact);
+            return View(new DataContext().Contacts.ToList());
         }
 
         // GET: Contact/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+
+            return View(new DataContext().Contacts.Find(id));
         }
 
         // GET: Contact/Create
         public ActionResult Create()
         {
+
             return View();
         }
 
@@ -35,9 +37,16 @@ namespace AssignmentCRUD.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                DataContext context = new DataContext();
+                var contact = context.Contacts.Add(new Contact() { Name = collection["Name"], Email = collection["Email"], PhoneNumber = collection["PhoneNumber"], ActiveSince = Convert.ToDateTime(collection["ActiveSince"]) });
+                //contact.Name = collection["Name"];
+                //contact.PhoneNumber = collection["Email"];
+                //contact.PhoneNumber = collection["PhoneNumber"];
+                //contact.ActiveSince = collection["ActiveSince"];
+                context.SaveChanges();
 
-                return RedirectToAction("Index");
+                // TODO: Add insert logic here
+                return RedirectToAction("All");
             }
             catch
             {
@@ -48,7 +57,7 @@ namespace AssignmentCRUD.Controllers
         // GET: Contact/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(new DataContext().Contacts.Find(id));
         }
 
         // POST: Contact/Edit/5
@@ -58,19 +67,26 @@ namespace AssignmentCRUD.Controllers
             try
             {
                 // TODO: Add update logic here
+                DataContext context = new DataContext();
+                var toUpdate = context.Contacts.Find(id);
+                toUpdate.Name = collection["Name"];
+                toUpdate.PhoneNumber = collection["PhoneNumber"];
+                toUpdate.Email = collection["Email"];
+                toUpdate.ActiveSince = Convert.ToDateTime(collection["ActiveSince"]);
+                context.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("All");
             }
             catch
             {
-                return View();
+                return View("All");
             }
         }
 
         // GET: Contact/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(new DataContext().Contacts.Find(id));
         }
 
         // POST: Contact/Delete/5
@@ -79,9 +95,11 @@ namespace AssignmentCRUD.Controllers
         {
             try
             {
+                DataContext context = new DataContext();
+                context.Contacts.Remove(context.Contacts.Find(id));
                 // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                context.SaveChanges();
+                return RedirectToAction("All");
             }
             catch
             {

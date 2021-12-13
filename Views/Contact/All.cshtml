@@ -27,7 +27,7 @@
         </th>
         <th></th>
     </tr>
-    @if (Model != null)
+    @if (Model != null && Model.Count()>0)
     {
         foreach (var item in Model)
         {
