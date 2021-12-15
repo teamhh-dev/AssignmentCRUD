@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AssignmentCRUD.Models.Result>
+@{
+    ViewBag.Title = "Consult";
+}
+
+<h2 class="col-12 bg-primary rounded rounded-2 p-3 shadow-sm">Voting Result</h2>
+<table class="table">
+    <tr>
+        <th>Activity Name</th>
+        <th>Vote Count</th>
+    </tr>
+    @*@ViewBag.VotingList*@
+    @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Count</td>
+            </tr>
+        }
+</table>
+
+
+
+
+

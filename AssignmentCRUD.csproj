@@ -231,10 +231,15 @@
     <Compile Include="Migrations\202112131236545_createContactTable.designer.cs">
       <DependentUpon>202112131236545_createContactTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112141701525_CreateActivityVoteTables.cs" />
+    <Compile Include="Migrations\202112141701525_CreateActivityVoteTables.designer.cs">
+      <DependentUpon>202112141701525_CreateActivityVoteTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -255,6 +260,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Images\312495987.jpg" />
+    <Content Include="Content\Images\Hiking_to_the_Ice_Lakes._San_Juan_National_Forest,_Colorado.jpg" />
+    <Content Include="Content\Images\Ski_Famille_-_Family_Ski_Holidays.jpg" />
+    <Content Include="Content\Images\_117371499_gettyimages-1215359845.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -318,6 +327,8 @@
     <Content Include="Views\Contact\Delete.cshtml" />
     <Content Include="Views\Activity\Index.cshtml" />
     <Content Include="Views\Activity\Vote.cshtml" />
+    <Content Include="Views\Activity\Gallery.cshtml" />
+    <Content Include="Views\Activity\Consult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -330,6 +341,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202112131236545_createContactTable.resx">
       <DependentUpon>202112131236545_createContactTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112141701525_CreateActivityVoteTables.resx">
+      <DependentUpon>202112141701525_CreateActivityVoteTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
