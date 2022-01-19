@@ -13,6 +13,7 @@ namespace AssignmentCRUD.Models
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Vote> Votes { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
     }
 }
