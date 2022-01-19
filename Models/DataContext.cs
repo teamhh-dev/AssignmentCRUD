@@ -14,6 +14,7 @@ namespace AssignmentCRUD.Models
         public DbSet<Activity> Activities { get; set; }
         public DbSet<Vote> Votes { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Agent> Agents { get; set; }
 
     }
 }

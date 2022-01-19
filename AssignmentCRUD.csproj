@@ -219,6 +219,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ActivityController.cs" />
+    <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -238,6 +239,10 @@
     <Compile Include="Migrations\202201190110304_CreateCustomerTable.cs" />
     <Compile Include="Migrations\202201190110304_CreateCustomerTable.designer.cs">
       <DependentUpon>202201190110304_CreateCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202201190249127_CreateAgentTable.cs" />
+    <Compile Include="Migrations\202201190249127_CreateAgentTable.Designer.cs">
+      <DependentUpon>202201190249127_CreateAgentTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -340,6 +345,11 @@
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Agent\Create.cshtml" />
+    <Content Include="Views\Agent\Delete.cshtml" />
+    <Content Include="Views\Agent\Details.cshtml" />
+    <Content Include="Views\Agent\Edit.cshtml" />
+    <Content Include="Views\Agent\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201190110304_CreateCustomerTable.resx">
       <DependentUpon>202201190110304_CreateCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201190249127_CreateAgentTable.resx">
+      <DependentUpon>202201190249127_CreateAgentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
