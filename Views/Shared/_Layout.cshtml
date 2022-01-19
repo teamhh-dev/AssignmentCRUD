@@ -17,7 +17,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                    @*<li class="nav-item">
                         @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })
 
                     </li>
@@ -38,7 +38,7 @@
                     </li> </li><li class="nav-item">
                         @Html.ActionLink("Image Gallery", "Gallery","Activity", new { }, new { @class = "nav-link" })
 
-                    </li>
+                    </li>*@
                     <li class="nav-item">
                         @Html.ActionLink("Customer", "Index","Customer", new { }, new { @class = "nav-link" })
 
@@ -48,7 +48,7 @@
 
                     </li>
                     <li class="nav-item">
-                        @Html.ActionLink("Agent", "Index","Agent", new { }, new { @class = "nav-link" })
+                        @Html.ActionLink("Assign Agent", "AssignAgents", "Customer", new { }, new { @class = "nav-link" })
 
                     </li>
 

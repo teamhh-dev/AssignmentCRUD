@@ -114,6 +114,12 @@ namespace AssignmentCRUD.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult AgentCustomers(int id)
+        {
+            Agent agent = db.Agents.Find(id);
+            IEnumerable<Customer> agentCustomers = db.Customers.Where(i => i.AgentId == id);
+            return View(agentCustomers);
+        }
 
         protected override void Dispose(bool disposing)
         {

@@ -244,6 +244,10 @@
     <Compile Include="Migrations\202201190249127_CreateAgentTable.Designer.cs">
       <DependentUpon>202201190249127_CreateAgentTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201190310530_CreateAgentToCustomersRelation.cs" />
+    <Compile Include="Migrations\202201190310530_CreateAgentToCustomersRelation.Designer.cs">
+      <DependentUpon>202201190310530_CreateAgentToCustomersRelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Agent.cs" />
@@ -350,6 +354,8 @@
     <Content Include="Views\Agent\Details.cshtml" />
     <Content Include="Views\Agent\Edit.cshtml" />
     <Content Include="Views\Agent\Index.cshtml" />
+    <Content Include="Views\Customer\AssignAgents.cshtml" />
+    <Content Include="Views\Agent\AgentCustomers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202201190249127_CreateAgentTable.resx">
       <DependentUpon>202201190249127_CreateAgentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201190310530_CreateAgentToCustomersRelation.resx">
+      <DependentUpon>202201190310530_CreateAgentToCustomersRelation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

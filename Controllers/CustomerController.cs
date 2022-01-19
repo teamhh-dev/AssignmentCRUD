@@ -10,7 +10,7 @@ namespace AssignmentCRUD.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
-        private DataContext _db=new DataContext();
+        private DataContext _db = new DataContext();
         List<string> list = new List<string>()
             {
                 "Pakistan",
@@ -19,7 +19,7 @@ namespace AssignmentCRUD.Controllers
             };
         public ActionResult Index()
         {
-            
+
             return View(_db.Customers.ToList());
         }
 
@@ -33,7 +33,7 @@ namespace AssignmentCRUD.Controllers
         public ActionResult Create()
         {
 
-            
+
             SelectList countryList = new SelectList(list);
 
             ViewBag.Countries = list;
@@ -73,7 +73,7 @@ namespace AssignmentCRUD.Controllers
             try
             {
                 // TODO: Add update logic here
-                var old=_db.Customers.FirstOrDefault(i => i.Id == id);
+                var old = _db.Customers.FirstOrDefault(i => i.Id == id);
                 old.Name = customer.Name;
                 old.Address = customer.Address;
                 old.Country = customer.Country;
@@ -110,5 +110,28 @@ namespace AssignmentCRUD.Controllers
                 return View();
             }
         }
+        public ActionResult AssignAgents()
+        {
+            ViewBag.customersWithoutAgent = _db.Customers.Where(i => i.AgentId == null);
+            ViewBag.agents = _db.Agents;
+
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult AssignAgents(FormCollection form)
+        {
+            if (form["customer"] == null || form["agent"] == null)
+            {
+                return Redirect("/Customer/AssignAgents");
+
+            }
+            _db.Customers.Find(Convert.ToInt32(form["customer"])).AgentId = Convert.ToInt32((form["agent"]));
+            _db.SaveChanges();
+            return Redirect("/Customer/AssignAgents");
+
+        }
+
     }
 }

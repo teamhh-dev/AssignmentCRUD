@@ -1,0 +1,49 @@
+﻿@*@model IEnumerable<AssignmentCRUD.Models.Customer>*@
+
+@{
+    ViewBag.Title = "AssignAgents";
+}
+
+<h2>AssignAgents</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="container border-1 rounded-2 shadow shadow-sm p-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Customers</td>
+                    <td></td>
+                    <td>Agents</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select class="form-select" id="customer" name="customer">
+                            <option selected disabled>------</option>
+                            @foreach (var customer in ViewBag.customersWithoutAgent)
+                            {
+                                <option value="@customer.Id">@customer.Name</option>
+
+                            }
+                        </select>
+                    </td>
+                    <td>
+                       <button class="btn btn-primary">Assign To..</button>
+                    </td>
+                    <td>
+                        <select class="form-select" id="agent" name="agent">
+                            <option selected disabled>------</option>
+                            @foreach (var agent in ViewBag.agents)
+                            {
+                                <option value="@agent.Id">@agent.FullName</option>
+
+                            }
+                        </select>
+                    </td>
+                <tr>
+            </tbody>
+        </table>
+    </div>
+}
